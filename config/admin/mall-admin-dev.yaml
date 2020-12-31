@@ -46,7 +46,7 @@ spring:
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
         slave_1:
-          url: jdbc:mysql://10.100.6.140:3308/mall
+          url: jdbc:mysql://10.100.6.140:3307/mall
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver
@@ -64,8 +64,8 @@ spring:
         #以上会配置一个默认库master，一个组slave下有两个子库slave_1,slave_2
 
   redis:
-    host: localhost # Redis服务器地址
-    database: 0 # Redis数据库索引（默认为0）
+    host: 10.100.6.140 # Redis服务器地址
+    database: 8 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password: # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
