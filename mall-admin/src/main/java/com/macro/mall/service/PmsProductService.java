@@ -18,7 +18,7 @@ public interface PmsProductService {
     /**
      * 创建商品
      */
-    @DSTransactional(isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED)
+    @DSTransactional
     int create(PmsProductParam productParam);
 
     /**
