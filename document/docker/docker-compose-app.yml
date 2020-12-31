@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mall-admin:
-    image: mall/mall-admin:1.0-SNAPSHOT
+    image: mall/mall-admin:1.5-SNAPSHOT
     container_name: mall-admin
     ports:
       - 8080:8080
@@ -18,7 +18,7 @@ services:
       - mysql-slave2:db-slave2 #可以用db这个域名访问mysql服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-search:
-    image: mall/mall-search:1.0-SNAPSHOT
+    image: mall/mall-search:1.5-SNAPSHOT
     container_name: mall-search
     ports:
       - 8081:8081
@@ -36,7 +36,7 @@ services:
       - mysql-slave2:db-slave2 #可以用db这个域名访问mysql服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-portal:
-    image: mall/mall-portal:1.0-SNAPSHOT
+    image: mall/mall-portal:1.5-SNAPSHOT
     container_name: mall-portal
     ports:
       - 8085:8085
