@@ -14,6 +14,8 @@ services:
     external_links:
       - logstash:logstash #logstash日志
       - mysql:db #可以用db这个域名访问mysql服务
+      - mysql-slave:db-slave1 #可以用db这个域名访问mysql服务
+      - mysql-slave2:db-slave2 #可以用db这个域名访问mysql服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-search:
     image: mall/mall-search:1.0-SNAPSHOT
@@ -30,6 +32,8 @@ services:
       - elasticsearch:es #可以用es这个域名访问elasticsearch服务
       - logstash:logstash #logstash日志
       - mysql:db #可以用db这个域名访问mysql服务
+      - mysql-slave:db-slave1 #可以用db这个域名访问mysql服务
+      - mysql-slave2:db-slave2 #可以用db这个域名访问mysql服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-portal:
     image: mall/mall-portal:1.0-SNAPSHOT
@@ -47,6 +51,8 @@ services:
       - redis:redis #可以用redis这个域名访问redis服务
       - mongo:mongo #可以用mongo这个域名访问mongo服务
       - mysql:db #可以用db这个域名访问mysql服务
+      - mysql-slave:db-slave1 #可以用db这个域名访问mysql服务
+      - mysql-slave2:db-slave2 #可以用db这个域名访问mysql服务
       - rabbitmq:rabbit #可以用rabbit这个域名访问rabbitmq服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-auth:

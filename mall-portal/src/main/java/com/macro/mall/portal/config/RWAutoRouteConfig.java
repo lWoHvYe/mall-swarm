@@ -1,4 +1,4 @@
-package com.macro.mall.config;
+package com.macro.mall.portal.config;
 
 import com.baomidou.dynamic.datasource.plugin.MasterSlaveAutoRoutingPlugin;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/12/30 23:17
  */
 @Component
-public class DataSourceConfig {
+public class RWAutoRouteConfig {
     @Bean
     public MasterSlaveAutoRoutingPlugin masterSlaveAutoRoutingPlugin(){
         return new MasterSlaveAutoRoutingPlugin();
