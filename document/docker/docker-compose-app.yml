@@ -21,7 +21,7 @@ services:
     image: mall/mall-search:1.5-SNAPSHOT
     container_name: mall-search
     ports:
-      - 8081:8081
+      - 8082:8081
     volumes:
       - /mydata/app/mall-search/logs:/var/logs
       - /etc/localtime:/etc/localtime
