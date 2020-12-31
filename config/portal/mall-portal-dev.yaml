@@ -64,5 +64,7 @@ logging:
   level:
     root: info
     com.macro.mall: debug
+    #  开启动态数据源的debug日志。
+    com.baomidou.dynamic: debug
 logstash:
   host: localhost

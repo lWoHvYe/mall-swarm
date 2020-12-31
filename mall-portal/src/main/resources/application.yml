@@ -31,6 +31,10 @@ spring:
     virtual-host: /mall
     username: mall
     password: mall
+  #     排除druid自动化配置
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+
 mybatis:
   mapper-locations:
     - classpath:dao/*.xml
