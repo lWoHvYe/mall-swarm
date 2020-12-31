@@ -2,7 +2,7 @@ package com.macro.mall.service;
 
 import com.macro.mall.dto.SmsCouponParam;
 import com.macro.mall.model.SmsCoupon;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -14,19 +14,19 @@ public interface SmsCouponService {
     /**
      * 添加优惠券
      */
-    @Transactional
+    @DSTransactional
     int create(SmsCouponParam couponParam);
 
     /**
      * 根据优惠券id删除优惠券
      */
-    @Transactional
+    @DSTransactional
     int delete(Long id);
 
     /**
      * 根据优惠券id更新优惠券信息
      */
-    @Transactional
+    @DSTransactional
     int update(Long id, SmsCouponParam couponParam);
 
     /**

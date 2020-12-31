@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class PmsDaoTests {
     private PmsProductDao productDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(PmsDaoTests.class);
     @Test
-    @Transactional
+    @DSTransactional
     @Rollback
     public void testInsertBatch(){
         List<PmsMemberPrice> list = new ArrayList<>();

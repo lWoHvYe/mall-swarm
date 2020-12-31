@@ -1,11 +1,9 @@
 package com.macro.mall.service;
 
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 import com.macro.mall.dto.PmsProductCategoryParam;
 import com.macro.mall.dto.PmsProductCategoryWithChildrenItem;
 import com.macro.mall.model.PmsProductCategory;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,13 +15,13 @@ public interface PmsProductCategoryService {
     /**
      * 创建商品分类
      */
-    @Transactional
+    @DSTransactional
     int create(PmsProductCategoryParam pmsProductCategoryParam);
 
     /**
      * 修改商品分类
      */
-    @Transactional
+    @DSTransactional
     int update(Long id, PmsProductCategoryParam pmsProductCategoryParam);
 
     /**

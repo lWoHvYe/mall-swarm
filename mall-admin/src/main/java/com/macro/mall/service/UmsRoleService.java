@@ -3,7 +3,7 @@ package com.macro.mall.service;
 import com.macro.mall.model.UmsMenu;
 import com.macro.mall.model.UmsResource;
 import com.macro.mall.model.UmsRole;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -55,12 +55,12 @@ public interface UmsRoleService {
     /**
      * 给角色分配菜单
      */
-    @Transactional
+    @DSTransactional
     int allocMenu(Long roleId, List<Long> menuIds);
 
     /**
      * 给角色分配资源
      */
-    @Transactional
+    @DSTransactional
     int allocResource(Long roleId, List<Long> resourceIds);
 }

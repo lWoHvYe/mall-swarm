@@ -4,7 +4,7 @@ import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.portal.domain.ConfirmOrderResult;
 import com.macro.mall.portal.domain.OmsOrderDetail;
 import com.macro.mall.portal.domain.OrderParam;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 import java.util.Map;
@@ -23,25 +23,25 @@ public interface OmsPortalOrderService {
     /**
      * 根据提交信息生成订单
      */
-    @Transactional
+    @DSTransactional
     Map<String, Object> generateOrder(OrderParam orderParam);
 
     /**
      * 支付成功后的回调
      */
-    @Transactional
+    @DSTransactional
     Integer paySuccess(Long orderId, Integer payType);
 
     /**
      * 自动取消超时订单
      */
-    @Transactional
+    @DSTransactional
     Integer cancelTimeOutOrder();
 
     /**
      * 取消单个超时订单
      */
-    @Transactional
+    @DSTransactional
     void cancelOrder(Long orderId);
 
     /**

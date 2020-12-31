@@ -3,7 +3,7 @@ package com.macro.mall.portal.service;
 import com.macro.mall.model.OmsCartItem;
 import com.macro.mall.portal.domain.CartProduct;
 import com.macro.mall.portal.domain.CartPromotionItem;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface OmsCartItemService {
     /**
      * 查询购物车中是否包含该商品，有增加数量，无添加到购物车
      */
-    @Transactional
+    @DSTransactional
     int add(OmsCartItem cartItem);
 
     /**
@@ -46,7 +46,7 @@ public interface OmsCartItemService {
     /**
      * 修改购物车中商品的规格
      */
-    @Transactional
+    @DSTransactional
     int updateAttr(OmsCartItem cartItem);
 
     /**

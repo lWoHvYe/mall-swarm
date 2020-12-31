@@ -2,7 +2,7 @@ package com.macro.mall.service;
 
 import com.macro.mall.dto.SmsFlashPromotionProduct;
 import com.macro.mall.model.SmsFlashPromotionProductRelation;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface SmsFlashPromotionProductRelationService {
     /**
      * 批量添加关联
      */
-    @Transactional
+    @DSTransactional
     int create(List<SmsFlashPromotionProductRelation> relationList);
 
     /**

@@ -2,7 +2,7 @@ package com.macro.mall.service;
 
 import com.macro.mall.dto.*;
 import com.macro.mall.model.OmsOrder;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -19,13 +19,13 @@ public interface OmsOrderService {
     /**
      * 批量发货
      */
-    @Transactional
+    @DSTransactional
     int delivery(List<OmsOrderDeliveryParam> deliveryParamList);
 
     /**
      * 批量关闭订单
      */
-    @Transactional
+    @DSTransactional
     int close(List<Long> ids, String note);
 
     /**
@@ -41,18 +41,18 @@ public interface OmsOrderService {
     /**
      * 修改订单收货人信息
      */
-    @Transactional
+    @DSTransactional
     int updateReceiverInfo(OmsReceiverInfoParam receiverInfoParam);
 
     /**
      * 修改订单费用信息
      */
-    @Transactional
+    @DSTransactional
     int updateMoneyInfo(OmsMoneyInfoParam moneyInfoParam);
 
     /**
      * 修改订单备注
      */
-    @Transactional
+    @DSTransactional
     int updateNote(Long id, String note, Integer status);
 }

@@ -6,7 +6,7 @@ import com.macro.mall.dto.PmsProductResult;
 import com.macro.mall.model.PmsProduct;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public interface PmsProductService {
     /**
      * 创建商品
      */
-    @Transactional(isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED)
+    @DSTransactional(isolation = Isolation.DEFAULT,propagation = Propagation.REQUIRED)
     int create(PmsProductParam productParam);
 
     /**
@@ -29,7 +29,7 @@ public interface PmsProductService {
     /**
      * 更新商品
      */
-    @Transactional
+    @DSTransactional
     int update(Long id, PmsProductParam productParam);
 
     /**
@@ -43,7 +43,7 @@ public interface PmsProductService {
      * @param verifyStatus 审核状态
      * @param detail 审核详情
      */
-    @Transactional
+    @DSTransactional
     int updateVerifyStatus(List<Long> ids, Integer verifyStatus, String detail);
 
     /**

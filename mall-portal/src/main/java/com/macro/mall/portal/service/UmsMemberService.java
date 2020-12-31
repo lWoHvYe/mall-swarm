@@ -3,7 +3,7 @@ package com.macro.mall.portal.service;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.model.UmsMember;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 /**
  * 会员管理Service
@@ -23,7 +23,7 @@ public interface UmsMemberService {
     /**
      * 用户注册
      */
-    @Transactional
+    @DSTransactional
     void register(String username, String password, String telephone, String authCode);
 
     /**
@@ -34,7 +34,7 @@ public interface UmsMemberService {
     /**
      * 修改密码
      */
-    @Transactional
+    @DSTransactional
     void updatePassword(String telephone, String password, String authCode);
 
     /**

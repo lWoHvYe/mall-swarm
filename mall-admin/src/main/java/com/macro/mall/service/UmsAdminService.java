@@ -5,7 +5,7 @@ import com.macro.mall.common.domain.UserDto;
 import com.macro.mall.dto.UmsAdminParam;
 import com.macro.mall.dto.UpdateAdminPasswordParam;
 import com.macro.mall.model.*;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -55,7 +55,7 @@ public interface UmsAdminService {
     /**
      * 修改用户角色关系
      */
-    @Transactional
+    @DSTransactional
     int updateRole(Long adminId, List<Long> roleIds);
 
     /**

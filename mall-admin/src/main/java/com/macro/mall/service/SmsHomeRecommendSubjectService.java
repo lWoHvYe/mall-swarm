@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.macro.mall.model.SmsHomeRecommendSubject;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public interface SmsHomeRecommendSubjectService {
     /**
      * 添加首页推荐
      */
-    @Transactional
+    @DSTransactional
     int create(List<SmsHomeRecommendSubject> recommendSubjectList);
 
     /**

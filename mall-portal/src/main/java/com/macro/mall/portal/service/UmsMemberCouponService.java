@@ -4,7 +4,7 @@ import com.macro.mall.model.SmsCoupon;
 import com.macro.mall.model.SmsCouponHistory;
 import com.macro.mall.portal.domain.CartPromotionItem;
 import com.macro.mall.portal.domain.SmsCouponHistoryDetail;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public interface UmsMemberCouponService {
     /**
      * 会员添加优惠券
      */
-    @Transactional
+    @DSTransactional
     void add(Long couponId);
 
     /**

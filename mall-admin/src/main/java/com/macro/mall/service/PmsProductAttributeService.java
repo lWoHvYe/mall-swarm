@@ -3,7 +3,7 @@ package com.macro.mall.service;
 import com.macro.mall.dto.PmsProductAttributeParam;
 import com.macro.mall.dto.ProductAttrInfo;
 import com.macro.mall.model.PmsProductAttribute;
-import org.springframework.transaction.annotation.Transactional;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public interface PmsProductAttributeService {
     /**
      * 添加商品属性
      */
-    @Transactional
+    @DSTransactional
     int create(PmsProductAttributeParam pmsProductAttributeParam);
 
     /**
@@ -35,7 +35,7 @@ public interface PmsProductAttributeService {
      */
     PmsProductAttribute getItem(Long id);
 
-    @Transactional
+    @DSTransactional
     int delete(List<Long> ids);
 
     List<ProductAttrInfo> getProductAttrInfo(Long productCategoryId);
