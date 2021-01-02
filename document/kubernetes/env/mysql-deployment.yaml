@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mysql
   name: mysql
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: mysql
     spec:
@@ -38,10 +36,13 @@ spec:
             - containerPort: 3306
           resources: {}
           volumeMounts:
+#            挂载数据
             - mountPath: /var/lib/mysql
               name: mysql-claim0
+#            挂载配置文件
             - mountPath: /etc/mysql/conf.d
               name: mysql-claim1
+#            挂载日志输出目录
             - mountPath: /var/log/mysql
               name: mysql-claim2
       restartPolicy: Always
@@ -55,4 +56,4 @@ spec:
         - name: mysql-claim2
           persistentVolumeClaim:
             claimName: mysql-claim2
-status: {}
+##配置App

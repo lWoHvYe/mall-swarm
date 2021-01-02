@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mysql
   name: mysql
@@ -15,5 +14,4 @@ spec:
       targetPort: 3306
   selector:
     io.kompose.service: mysql
-status:
-  loadBalancer: {}
+##配置Service
