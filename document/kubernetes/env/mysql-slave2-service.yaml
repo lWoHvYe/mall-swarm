@@ -12,5 +12,7 @@ spec:
     - name: "3307"
       port: 3307
       targetPort: 3306
+      nodePort: 3307
+  type: NodePort
   selector:
     io.kompose.service: mysql-slave2

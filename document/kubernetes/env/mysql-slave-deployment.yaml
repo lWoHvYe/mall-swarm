@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mysql-slave
   name: mysql-slave
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: mysql-slave
     spec:
@@ -55,4 +53,3 @@ spec:
         - name: mysql-slave-claim2
           persistentVolumeClaim:
             claimName: mysql-slave-claim2
-status: {}
