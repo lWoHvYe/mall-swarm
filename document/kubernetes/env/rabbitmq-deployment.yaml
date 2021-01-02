@@ -13,8 +13,7 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: rabbitmq
-  strategy:
-    type: Recreate
+  strategy: {}
   template:
     metadata:
       annotations:
@@ -31,17 +30,5 @@ spec:
             - containerPort: 5672
             - containerPort: 15672
           resources: {}
-          volumeMounts:
-            - mountPath: /var/lib/rabbitmq
-              name: rabbitmq-claim0
-            - mountPath: /var/log/rabbitmq
-              name: rabbitmq-claim1
       restartPolicy: Always
-      volumes:
-        - name: rabbitmq-claim0
-          persistentVolumeClaim:
-            claimName: rabbitmq-claim0
-        - name: rabbitmq-claim1
-          persistentVolumeClaim:
-            claimName: rabbitmq-claim1
 status: {}

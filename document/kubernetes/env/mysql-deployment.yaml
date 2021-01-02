@@ -13,8 +13,7 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: mysql
-  strategy:
-    type: Recreate
+  strategy: {}
   template:
     metadata:
       annotations:
@@ -37,22 +36,5 @@ spec:
           ports:
             - containerPort: 3306
           resources: {}
-          volumeMounts:
-            - mountPath: /var/lib/mysql
-              name: mysql-claim0
-            - mountPath: /etc/mysql/conf.d
-              name: mysql-claim1
-            - mountPath: /var/log/mysql
-              name: mysql-claim2
       restartPolicy: Always
-      volumes:
-        - name: mysql-claim0
-          persistentVolumeClaim:
-            claimName: mysql-claim0
-        - name: mysql-claim1
-          persistentVolumeClaim:
-            claimName: mysql-claim1
-        - name: mysql-claim2
-          persistentVolumeClaim:
-            claimName: mysql-claim2
 status: {}

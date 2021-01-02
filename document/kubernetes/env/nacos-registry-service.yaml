@@ -13,6 +13,8 @@ spec:
     - name: "8848"
       port: 8848
       targetPort: 8848
+      nodePort: 8848
+  type: NodePort
   selector:
     io.kompose.service: nacos-registry
 status:

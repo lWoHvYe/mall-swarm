@@ -13,8 +13,7 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: nginx
-  strategy:
-    type: Recreate
+  strategy: {}
   template:
     metadata:
       annotations:
@@ -30,22 +29,5 @@ spec:
           ports:
             - containerPort: 80
           resources: {}
-          volumeMounts:
-            - mountPath: /etc/nginx/nginx.conf
-              name: nginx-claim0
-            - mountPath: /usr/share/nginx/html
-              name: nginx-claim1
-            - mountPath: /var/log/nginx
-              name: nginx-claim2
       restartPolicy: Always
-      volumes:
-        - name: nginx-claim0
-          persistentVolumeClaim:
-            claimName: nginx-claim0
-        - name: nginx-claim1
-          persistentVolumeClaim:
-            claimName: nginx-claim1
-        - name: nginx-claim2
-          persistentVolumeClaim:
-            claimName: nginx-claim2
 status: {}

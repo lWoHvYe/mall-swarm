@@ -13,6 +13,8 @@ spec:
     - name: "3308"
       port: 3308
       targetPort: 3306
+      nodePort: 3308
+  type: NodePort
   selector:
     io.kompose.service: mysql-slave
 status:

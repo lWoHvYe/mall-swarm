@@ -13,8 +13,7 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: logstash
-  strategy:
-    type: Recreate
+  strategy: {}
   template:
     metadata:
       annotations:
@@ -36,12 +35,5 @@ spec:
             - containerPort: 4562
             - containerPort: 4563
           resources: {}
-          volumeMounts:
-            - mountPath: /usr/share/logstash/pipeline/logstash.conf
-              name: logstash-claim0
       restartPolicy: Always
-      volumes:
-        - name: logstash-claim0
-          persistentVolumeClaim:
-            claimName: logstash-claim0
 status: {}
