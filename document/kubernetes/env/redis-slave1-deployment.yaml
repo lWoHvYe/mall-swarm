@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: redis-slave1
+  name: redis-slave1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: redis-slave1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: redis-slave1
+    spec:
+      containers:
+        - args:
+            - redis-server
+            - --slaveof
+            - redis
+            - "6379"
+            - --appendonly
+            - "yes"
+          image: redis:latest
+          name: redis-slave1
+          ports:
+            - containerPort: 6379
+          resources: {}
+          volumeMounts:
+            - mountPath: /data
+              name: redis-slave1-claim0
+      restartPolicy: Always
+      volumes:
+        - name: redis-slave1-claim0
+          persistentVolumeClaim:
+            claimName: redis-slave1-claim0
+status: {}
