@@ -13,7 +13,8 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: minio
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       annotations:
@@ -37,5 +38,17 @@ spec:
           ports:
             - containerPort: 9000
           resources: {}
+          volumeMounts:
+            - mountPath: /data
+              name: minio-claim0
+            - mountPath: /root/.minio
+              name: minio-claim1
       restartPolicy: Always
+      volumes:
+        - name: minio-claim0
+          persistentVolumeClaim:
+            claimName: minio-claim0
+        - name: minio-claim1
+          persistentVolumeClaim:
+            claimName: minio-claim1
 status: {}

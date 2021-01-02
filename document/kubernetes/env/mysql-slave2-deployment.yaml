@@ -13,7 +13,8 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: mysql-slave2
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       annotations:
@@ -36,5 +37,22 @@ spec:
           ports:
             - containerPort: 3306
           resources: {}
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-slave2-claim0
+            - mountPath: /etc/mysql/conf.d
+              name: mysql-slave2-claim1
+            - mountPath: /var/log/mysql
+              name: mysql-slave2-claim2
       restartPolicy: Always
+      volumes:
+        - name: mysql-slave2-claim0
+          persistentVolumeClaim:
+            claimName: mysql-slave2-claim0
+        - name: mysql-slave2-claim1
+          persistentVolumeClaim:
+            claimName: mysql-slave2-claim1
+        - name: mysql-slave2-claim2
+          persistentVolumeClaim:
+            claimName: mysql-slave2-claim2
 status: {}

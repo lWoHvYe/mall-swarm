@@ -13,8 +13,6 @@ spec:
     - name: "6380"
       port: 6380
       targetPort: 6379
-      nodePort: 6380
-  type: NodePort
   selector:
     io.kompose.service: redis-slave2
 status:

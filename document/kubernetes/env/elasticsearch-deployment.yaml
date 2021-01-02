@@ -13,7 +13,8 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: elasticsearch
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       annotations:
@@ -37,5 +38,17 @@ spec:
             - containerPort: 9200
             - containerPort: 9300
           resources: {}
+          volumeMounts:
+            - mountPath: /usr/share/elasticsearch/plugins
+              name: elasticsearch-claim0
+            - mountPath: /usr/share/elasticsearch/data
+              name: elasticsearch-claim1
       restartPolicy: Always
+      volumes:
+        - name: elasticsearch-claim0
+          persistentVolumeClaim:
+            claimName: elasticsearch-claim0
+        - name: elasticsearch-claim1
+          persistentVolumeClaim:
+            claimName: elasticsearch-claim1
 status: {}

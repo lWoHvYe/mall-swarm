@@ -13,8 +13,6 @@ spec:
     - name: "5601"
       port: 5601
       targetPort: 5601
-      nodePort: 5601
-  type: NodePort
   selector:
     io.kompose.service: kibana
 status:

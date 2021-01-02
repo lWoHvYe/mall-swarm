@@ -13,7 +13,8 @@ spec:
   selector:
     matchLabels:
       io.kompose.service: mongo
-  strategy: {}
+  strategy:
+    type: Recreate
   template:
     metadata:
       annotations:
@@ -29,5 +30,12 @@ spec:
           ports:
             - containerPort: 27017
           resources: {}
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-claim0
       restartPolicy: Always
+      volumes:
+        - name: mongo-claim0
+          persistentVolumeClaim:
+            claimName: mongo-claim0
 status: {}
