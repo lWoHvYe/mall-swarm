@@ -10,6 +10,7 @@ spec:
   resources:
     requests:
       storage: 100Mi
+  storageClassName: default
   selector:
     matchLabels:
       io.kompose.service: mysql-data
