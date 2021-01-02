@@ -8,6 +8,7 @@ enabled=1
 gpgcheck=1
 gpgkey=http://repo.mysql.com/RPM-GPG-KEY-mysql
 eof
-yum -y install mysql-community-server
+yum -y install mysql
+yum -y install mysql-server
 yum clean all
 rm -rf $0
