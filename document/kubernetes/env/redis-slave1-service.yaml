@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: redis-slave1
   name: redis-slave1
@@ -13,7 +12,7 @@ spec:
     - name: "6378"
       port: 6378
       targetPort: 6379
+      nodePort: 6378
+  type: NodePort
   selector:
     io.kompose.service: redis-slave1
-status:
-  loadBalancer: {}

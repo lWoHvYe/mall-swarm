@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-slave1-data
+  labels:
+    io.kompose.service: redis-slave1-data
+
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: default
+  nfs:
+    path: /mydata/redis-slave1/data
+    server: 10.100.6.140
+##配置PV

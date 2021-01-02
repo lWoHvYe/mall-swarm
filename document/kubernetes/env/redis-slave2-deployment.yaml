@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: redis-slave2
   name: redis-slave2
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: redis-slave2
     spec:
@@ -45,4 +43,3 @@ spec:
         - name: redis-slave2-claim0
           persistentVolumeClaim:
             claimName: redis-slave2-claim0
-status: {}
