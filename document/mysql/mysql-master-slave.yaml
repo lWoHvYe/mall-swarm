@@ -28,6 +28,7 @@ data:
     slave_skip_errors=1062
     datadir = /var/lib/mysql
   slave.cnf: |
+    [mysqld]
     server_id=102
     binlog-ignore-db=mysql
     log-bin=replicas-mysql-slave-bin
