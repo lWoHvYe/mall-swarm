@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  creationTimestamp: null
   labels:
     io.kompose.service: mysql-slave2-claim1
   name: mysql-slave2-claim1
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadOnlyMany
   resources:
     requests:
       storage: 100Mi
-status: {}
+  storageClassName: default
+  selector:
+    matchLabels:
+      io.kompose.service: mysql-slave2-config
