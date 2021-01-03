@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: rabbitmq
   name: rabbitmq
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: rabbitmq
     spec:
@@ -44,4 +42,3 @@ spec:
         - name: rabbitmq-claim1
           persistentVolumeClaim:
             claimName: rabbitmq-claim1
-status: {}

@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: nacos-registry
   name: nacos-registry
@@ -13,7 +12,7 @@ spec:
     - name: "8848"
       port: 8848
       targetPort: 8848
+      nodePort: 8848
+  type: NodePort
   selector:
     io.kompose.service: nacos-registry
-status:
-  loadBalancer: {}

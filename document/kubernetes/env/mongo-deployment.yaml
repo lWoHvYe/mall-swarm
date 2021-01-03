@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mongo
   name: mongo
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: mongo
     spec:
@@ -38,4 +36,3 @@ spec:
         - name: mongo-claim0
           persistentVolumeClaim:
             claimName: mongo-claim0
-status: {}
