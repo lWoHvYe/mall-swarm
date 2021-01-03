@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: kibana
   name: kibana
@@ -19,18 +18,16 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: kibana
     spec:
       containers:
         - env:
             - name: elasticsearch.hosts
-              value: http://es:9200
+              value: http://10.100.0.140:9200
           image: kibana:7.8.1
           name: kibana
           ports:
             - containerPort: 5601
           resources: {}
       restartPolicy: Always
-status: {}

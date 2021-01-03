@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: nginx
   name: nginx
@@ -15,5 +14,3 @@ spec:
       targetPort: 80
   selector:
     io.kompose.service: nginx
-status:
-  loadBalancer: {}

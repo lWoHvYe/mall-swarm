@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: logstash
   name: logstash
@@ -13,16 +12,19 @@ spec:
     - name: "4560"
       port: 4560
       targetPort: 4560
+      nodePort: 4560
     - name: "4561"
       port: 4561
       targetPort: 4561
+      nodePort: 4561
     - name: "4562"
       port: 4562
       targetPort: 4562
+      nodePort: 4562
     - name: "4563"
       port: 4563
       targetPort: 4563
+      nodePort: 4563
+  type: NodePort
   selector:
     io.kompose.service: logstash
-status:
-  loadBalancer: {}

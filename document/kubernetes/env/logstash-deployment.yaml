@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: logstash
   name: logstash
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: logstash
     spec:
@@ -38,10 +36,12 @@ spec:
           resources: {}
           volumeMounts:
             - mountPath: /usr/share/logstash/pipeline/logstash.conf
-              name: logstash-claim0
+              name: logstash-config-map
       restartPolicy: Always
       volumes:
-        - name: logstash-claim0
-          persistentVolumeClaim:
-            claimName: logstash-claim0
-status: {}
+        - name: logstash-config-map
+          configMap:
+            name: logstash-config
+            items:
+              - key: logstash-config
+                path: logstash-configmap.yaml

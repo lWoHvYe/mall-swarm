@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: kibana
   name: kibana
@@ -13,7 +12,7 @@ spec:
     - name: "5601"
       port: 5601
       targetPort: 5601
+      nodePort: 5601
+  type: NodePort
   selector:
     io.kompose.service: kibana
-status:
-  loadBalancer: {}
