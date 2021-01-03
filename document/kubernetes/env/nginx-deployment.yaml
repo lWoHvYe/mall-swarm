@@ -29,15 +29,15 @@ spec:
             - containerPort: 80
           resources: {}
           volumeMounts:
-            - mountPath: /etc/nginx/nginx
-              name: nginx-config-map
+            - mountPath: /etc/nginx/conf.d
+              name: nginx
             - mountPath: /usr/share/nginx/html
               name: nginx-claim1
             - mountPath: /var/log/nginx
               name: nginx-claim2
       restartPolicy: Always
       volumes:
-        - name: nginx-config-map
+        - name: nginx
           configMap:
             name: nginx-config
             items:
