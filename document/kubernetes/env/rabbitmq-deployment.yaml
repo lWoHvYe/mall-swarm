@@ -25,6 +25,7 @@ spec:
       containers:
         - image: rabbitmq:3.8.6-management
           name: rabbitmq
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ] #避免启动后退出
           ports:
             - containerPort: 5672
             - containerPort: 15672
