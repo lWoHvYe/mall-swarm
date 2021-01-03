@@ -35,7 +35,7 @@ spec:
             - containerPort: 4563
           resources: {}
           volumeMounts:
-            - mountPath: /usr/share/logstash/pipeline/logstash.conf
+            - mountPath: /usr/share/logstash/pipeline/
               name: logstash-config-map
       restartPolicy: Always
       volumes:
