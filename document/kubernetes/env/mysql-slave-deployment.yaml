@@ -54,7 +54,7 @@ spec:
             claimName: mysql-slave-claim0
         - name: mysql-config
           configMap:
-            - name: mysql-slave-config
+            - name: mysql-config
               items:
                 - key: slave.cnf
                   path: my.conf
