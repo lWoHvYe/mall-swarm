@@ -29,8 +29,9 @@ spec:
             - containerPort: 80
           resources: {}
           volumeMounts:
-            - mountPath: /etc/nginx/conf.d
+            - mountPath: /etc/nginx/nginx.conf
               name: nginx
+              subPath: nginx.conf
             - mountPath: /usr/share/nginx/html
               name: nginx-claim1
             - mountPath: /var/log/nginx
