@@ -53,10 +53,10 @@ spec:
             claimName: mysql-claim0
         - name: mysql-config
           configMap:
-            - name: mysql-config
-              items:
-                - key: master.cnf
-                  path: my.conf
+            name: mysql-config
+            items:
+              - key: master.cnf
+                path: my.conf
         - name: mysql-claim2
           persistentVolumeClaim:
             claimName: mysql-claim2
