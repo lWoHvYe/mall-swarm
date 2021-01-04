@@ -38,7 +38,7 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-slave-claim0
-            - mountPath: /etc/mysql/conf.d
+            - mountPath: /etc/mysql
               name: mysql-slave-claim1
             - mountPath: /var/log/mysql
               name: mysql-slave-claim2

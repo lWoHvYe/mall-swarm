@@ -40,7 +40,7 @@ spec:
             - mountPath: /var/lib/mysql
               name: mysql-claim0
 #            挂载配置文件
-            - mountPath: /etc/mysql/conf.d
+            - mountPath: /etc/mysql
               name: mysql-claim1
 #            挂载日志输出目录
             - mountPath: /var/log/mysql

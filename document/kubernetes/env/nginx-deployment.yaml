@@ -42,7 +42,7 @@ spec:
             name: nginx-config
             items:
               - key: nginx-config
-                path: nginx-configmap.yaml
+                path: nginx.conf
         - name: nginx-claim1
           persistentVolumeClaim:
             claimName: nginx-claim1
