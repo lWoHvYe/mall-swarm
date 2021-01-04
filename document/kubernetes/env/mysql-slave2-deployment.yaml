@@ -38,7 +38,7 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-slave2-claim0
-            - mountPath: /etc/mysql/my.cnf
+            - mountPath: /etc/mysql/conf.d/my.cnf
               name: mysql-config
               subPath: my.cnf
             - mountPath: /var/log/mysql
