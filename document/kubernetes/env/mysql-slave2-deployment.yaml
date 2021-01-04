@@ -42,6 +42,10 @@ spec:
               name: mysql-slave2-claim1
             - mountPath: /var/log/mysql
               name: mysql-slave2-claim2
+      initContainers:
+        - name: init-mydb1
+          image: busybox
+          command: ['sh', '-c', 'until nslookup mysql; do echo waiting for mysql; sleep 2; done;']
       restartPolicy: Always
       volumes:
         - name: mysql-slave2-claim0
