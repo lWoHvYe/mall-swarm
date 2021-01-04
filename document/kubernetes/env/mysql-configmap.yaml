@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  master.cnf: |                     # 配置文件自行编写，这里我用于测试只写了最简单的
+    [mysqld]
+    server_id=100
+    binlog-ignore-db=mysql
+    log-bin=replicas-mysql-bin
+    binlog_cache_size=1M
+    binlog_format=mixed
+    expire_logs_days=7
+    slave_skip_errors=1062
+    datadir = /var/lib/mysql
+  slave.cnf: |
+    [mysqld]
+    server_id=102
+    binlog-ignore-db=mysql
+    log-bin=replicas-mysql-slave-bin
+    binlog_cache_size=1M
+    binlog_format=mixed
+    expire_logs_days=7
+    slave_skip_errors=1062
+    relay_log=replicas-mysql-relay-bin
+    log_slave_updates=1
+    read_only=1
+    datadir = /var/lib/mysql
+  slave2.cnf: |
+    [mysqld]
+    server_id=104
+    binlog-ignore-db=mysql
+    log-bin=replicas-mysql-slave-bin
+    binlog_cache_size=1M
+    binlog_format=mixed
+    expire_logs_days=7
+    slave_skip_errors=1062
+    relay_log=replicas-mysql-relay-bin
+    log_slave_updates=1
+    read_only=1
+    datadir = /var/lib/mysql

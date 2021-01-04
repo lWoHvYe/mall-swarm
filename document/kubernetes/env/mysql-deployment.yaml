@@ -40,8 +40,9 @@ spec:
             - mountPath: /var/lib/mysql
               name: mysql-claim0
 #            挂载配置文件
-            - mountPath: /etc/mysql
-              name: mysql-claim1
+            - mountPath: /etc/mysql/my.conf
+              name: mysql-config
+              subPath: my.conf
 #            挂载日志输出目录
             - mountPath: /var/log/mysql
               name: mysql-claim2
@@ -50,9 +51,12 @@ spec:
         - name: mysql-claim0
           persistentVolumeClaim:
             claimName: mysql-claim0
-        - name: mysql-claim1
-          persistentVolumeClaim:
-            claimName: mysql-claim1
+        - name: mysql-config
+          configMap:
+            - name: mysql-config
+              items:
+                - key: master.cnf
+                  path: my.conf
         - name: mysql-claim2
           persistentVolumeClaim:
             claimName: mysql-claim2

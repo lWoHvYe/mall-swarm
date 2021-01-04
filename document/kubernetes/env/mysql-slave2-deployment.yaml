@@ -38,8 +38,9 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-slave2-claim0
-            - mountPath: /etc/mysql
-              name: mysql-slave2-claim1
+            - mountPath: /etc/mysql/my.conf
+              name: mysql-config
+              subPath: my.conf
             - mountPath: /var/log/mysql
               name: mysql-slave2-claim2
       initContainers:
@@ -51,9 +52,12 @@ spec:
         - name: mysql-slave2-claim0
           persistentVolumeClaim:
             claimName: mysql-slave2-claim0
-        - name: mysql-slave2-claim1
-          persistentVolumeClaim:
-            claimName: mysql-slave2-claim1
+        - name: mysql-config
+          configMap:
+            - name: mysql-config
+              items:
+                - key: slave2.cnf
+                  path: my.conf
         - name: mysql-slave2-claim2
           persistentVolumeClaim:
             claimName: mysql-slave2-claim2
