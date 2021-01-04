@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.22.0 (955b78124)
   labels:
     io.kompose.service: nginx
-  name: nginx
+  name: nginx-82
 spec:
   ports:
-    - name: "80"
-      port: 80
+    - name: "82"
+      port: 82
       targetPort: 80
-      nodePort: 80
+      nodePort: 82
   type: NodePort
   selector:
     io.kompose.service: nginx
