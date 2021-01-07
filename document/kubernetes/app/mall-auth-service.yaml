@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mall-auth
   name: mall-auth
@@ -13,7 +12,7 @@ spec:
     - name: "8401"
       port: 8401
       targetPort: 8401
+      nodePort: 8401
+  type: NodePort
   selector:
     io.kompose.service: mall-auth
-status:
-  loadBalancer: {}

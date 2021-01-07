@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mall-admin
   name: mall-admin
@@ -13,7 +12,7 @@ spec:
     - name: "8080"
       port: 8080
       targetPort: 8080
+      nodePort: 8080
+  type: NodePort
   selector:
     io.kompose.service: mall-admin
-status:
-  loadBalancer: {}

@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mall-admin
   name: mall-admin
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: mall-admin
     spec:
@@ -48,4 +46,3 @@ spec:
         - name: mall-admin-claim1
           persistentVolumeClaim:
             claimName: mall-admin-claim1
-status: {}

@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mall-monitor
   name: mall-monitor
@@ -13,7 +12,7 @@ spec:
     - name: "8101"
       port: 8101
       targetPort: 8101
+      nodePort: 8101
+  type: NodePort
   selector:
     io.kompose.service: mall-monitor
-status:
-  loadBalancer: {}

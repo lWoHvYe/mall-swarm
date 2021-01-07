@@ -4,7 +4,6 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
-  creationTimestamp: null
   labels:
     io.kompose.service: mall-search
   name: mall-search
@@ -20,7 +19,6 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
-      creationTimestamp: null
       labels:
         io.kompose.service: mall-search
     spec:
@@ -48,4 +46,3 @@ spec:
         - name: mall-search-claim1
           persistentVolumeClaim:
             claimName: mall-search-claim1
-status: {}
