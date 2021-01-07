@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mall-geteway-logs
+  name: mall-gateway-logs
   labels:
-    io.kompose.service: mall-geteway-logs
+    io.kompose.service: mall-gateway-logs
 
 spec:
   capacity:
@@ -13,6 +13,6 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: default
   nfs:
-    path: /mydata/app/mall-geteway/logs
+    path: /mydata/app/mall-gateway/logs
     server: 10.100.6.140
 ##配置PV

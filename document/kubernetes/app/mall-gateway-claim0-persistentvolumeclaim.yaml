@@ -13,4 +13,4 @@ spec:
   storageClassName: default
   selector:
     matchLabels:
-      io.kompose.service: mall-geteway-logs
+      io.kompose.service: mall-gateway-logs

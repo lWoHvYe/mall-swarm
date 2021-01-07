@@ -29,33 +29,33 @@ spring:
       strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候会抛出异常,不启动则使用默认数据源.
       datasource:
         master:
-          url: jdbc:mysql://db:3306/mall
+          url: jdbc:mysql://10.100.6.140:3306/mall
           username: root
           password: root
           driver-class-name: com.mysql.cj.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
         slave_1:
-          url: jdbc:mysql://db-slave1:3306/mall
+          url: jdbc:mysql://10.100.6.140:3307/mall
           username: reader
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
         slave_2:
-          url: jdbc:mysql://db-slave2:3306/mall
+          url: jdbc:mysql://10.100.6.140:3308/mall
           username: reader
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
 
   data:
     mongodb:
-      host: mongo
+      host: 10.100.6.140
       port: 27017
       database: mall-port
   redis:
-    host: redis # Redis服务器地址
+    host: 10.100.6.140 # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password: #不设置密码
   rabbitmq:
-    host: rabbit
+    host: 10.100.6.140
     port: 5672
     virtual-host: /mall
     username: mall
@@ -68,7 +68,7 @@ logging:
     root: info
     com.macro.mall: info
     #  开启动态数据源的debug日志。
-    com.baomidou.dynamic: debug
+    com.baomidou.dynamic: info
 logstash:
-  host: logstash
+  host: 10.100.6.140
 
