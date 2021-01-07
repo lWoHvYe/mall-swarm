@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mall-auth-logs
+  labels:
+    io.kompose.service: mall-auth-logs
+
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: default
+  nfs:
+    path: /mydata/app/mall-auth/logs
+    server: 10.100.6.140
+##配置PV

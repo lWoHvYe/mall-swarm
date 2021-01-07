@@ -36,13 +36,8 @@ spec:
           volumeMounts:
             - mountPath: /var/logs
               name: mall-monitor-claim0
-            - mountPath: /etc/localtime  #文件挂载，使用subPath
-              name: mall-monitor-claim1
       restartPolicy: Always
       volumes:
         - name: mall-monitor-claim0
           persistentVolumeClaim:
             claimName: mall-monitor-claim0
-        - name: mall-monitor-claim1
-          persistentVolumeClaim:
-            claimName: mall-monitor-claim1

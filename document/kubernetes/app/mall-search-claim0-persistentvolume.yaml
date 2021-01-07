@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mall-search-logs
+  labels:
+    io.kompose.service: mall-search-logs
+
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: default
+  nfs:
+    path: /mydata/app/mall-search/logs
+    server: 10.100.6.140
+##配置PV

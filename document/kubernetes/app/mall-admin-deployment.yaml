@@ -36,13 +36,8 @@ spec:
           volumeMounts:
             - mountPath: /var/logs
               name: mall-admin-claim0
-            - mountPath: /etc/localtime
-              name: mall-admin-claim1
       restartPolicy: Always
       volumes:
         - name: mall-admin-claim0
           persistentVolumeClaim:
             claimName: mall-admin-claim0
-        - name: mall-admin-claim1
-          persistentVolumeClaim:
-            claimName: mall-admin-claim1

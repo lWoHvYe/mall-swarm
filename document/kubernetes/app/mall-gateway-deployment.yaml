@@ -34,13 +34,8 @@ spec:
           volumeMounts:
             - mountPath: /var/logs
               name: mall-gateway-claim0
-            - mountPath: /etc/localtime
-              name: mall-gateway-claim1
       restartPolicy: Always
       volumes:
         - name: mall-gateway-claim0
           persistentVolumeClaim:
             claimName: mall-gateway-claim0
-        - name: mall-gateway-claim1
-          persistentVolumeClaim:
-            claimName: mall-gateway-claim1
