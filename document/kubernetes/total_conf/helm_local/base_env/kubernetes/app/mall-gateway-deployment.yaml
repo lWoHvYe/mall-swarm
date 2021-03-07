@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  labels:
+    io.kompose.service: mall-gateway
+  name: mall-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mall-gateway
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      labels:
+        io.kompose.service: mall-gateway
+    spec:
+      containers:
+        - env:
+            - name: TZ
+              value: '"Asia/Shanghai"'
+          image: mall/mall-gateway:1.0-SNAPSHOT
+          name: mall-gateway
+          ports:
+            - containerPort: 8201
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/logs
+              name: mall-gateway-claim0
+      restartPolicy: Always
+      volumes:
+        - name: mall-gateway-claim0
+          persistentVolumeClaim:
+            claimName: mall-gateway-claim0

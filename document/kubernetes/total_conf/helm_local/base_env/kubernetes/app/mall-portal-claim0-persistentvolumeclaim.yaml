@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    io.kompose.service: mall-portal-claim0
+  name: mall-portal-claim0
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: default
+  selector:
+    matchLabels:
+      io.kompose.service: mall-portal-logs

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  labels:
+    io.kompose.service: mall-monitor
+  name: mall-monitor
+spec:
+  ports:
+    - name: "8101"
+      port: 8101
+      targetPort: 8101
+      nodePort: 8101
+  type: NodePort
+  selector:
+    io.kompose.service: mall-monitor

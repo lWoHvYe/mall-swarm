@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: 10.100.6.140 # Redis服务器地址
+    host: 10.100.6.145 # Redis服务器地址
     database: 0 # Redis数据库索引（默认为0）
     port: 6379 # Redis服务器连接端口
     password: #不设置密码
@@ -16,4 +16,4 @@ logging:
     root: info
     com.macro.mall: info
 logstash:
-  host: 10.100.6.140
+  host: 10.100.6.145

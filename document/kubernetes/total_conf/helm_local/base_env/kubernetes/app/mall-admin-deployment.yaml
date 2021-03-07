@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  labels:
+    io.kompose.service: mall-admin
+  name: mall-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: mall-admin
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      labels:
+        io.kompose.service: mall-admin
+    spec:
+      containers:
+        - env:
+            - name: JAVA_OPTS
+              value: -Xms512m -Xmx512m
+            - name: TZ
+              value: '"Asia/Shanghai"'
+          image: mall/mall-admin:1.5-SNAPSHOT
+          name: mall-admin
+          ports:
+            - containerPort: 8080
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/logs
+              name: mall-admin-claim0
+      restartPolicy: Always
+      volumes:
+        - name: mall-admin-claim0
+          persistentVolumeClaim:
+            claimName: mall-admin-claim0

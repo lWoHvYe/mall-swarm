@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  labels:
+    io.kompose.service: mall-auth
+  name: mall-auth
+spec:
+  ports:
+    - name: "8401"
+      port: 8401
+      targetPort: 8401
+      nodePort: 8401
+  type: NodePort
+  selector:
+    io.kompose.service: mall-auth

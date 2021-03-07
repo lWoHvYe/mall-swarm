@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    io.kompose.service: redis-slave2-claim0
+  name: redis-slave2-claim0
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: default
+  selector:
+    matchLabels:
+      io.kompose.service: redis-slave2-data
