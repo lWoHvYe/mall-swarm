@@ -192,7 +192,7 @@ configurationOverrides:
   ## Setting "advertised.listeners" here appends to "PLAINTEXT://${POD_IP}:9092,", ensure you update the domain
   ## If external service type is Nodeport:
   "advertised.listeners": |-
-    EXTERNAL://10.96.0.1:$((31090 + ${KAFKA_BROKER_ID}))
+    EXTERNAL://10.100.6.140:$((31090 + ${KAFKA_BROKER_ID}))
   ## If external service type is LoadBalancer and distinct is true:
   # "advertised.listeners": |-
   #   EXTERNAL://kafka-$((${KAFKA_BROKER_ID})).cluster.local:19092
