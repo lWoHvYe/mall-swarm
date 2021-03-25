@@ -10,4 +10,4 @@ spec:
          nodePort: 32181
   selector:
     app: zookeeper
-    release: k8s-kafka
+    release: kafka
