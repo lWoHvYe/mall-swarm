@@ -13,7 +13,7 @@ data:
     oplogSize=2048   #日志滚动，单位M
   slave.conf: |
     port=27017
-    fork=true
+    # fork=true
     logpath=/data/mongodb/logs/mongodb.log
     logappend=true
     maxConns=1024
