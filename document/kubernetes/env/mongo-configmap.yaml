@@ -5,12 +5,16 @@ metadata:
 data:
   master.conf: |
     port=27017       #端口号
+    # fork=true        #以守护进程方式运行
+    logpath=/data/mongodb/logs/mongodb.log  #日志文件
     logappend=true   #日志输出方式
     maxConns=1024    #数据库最大连接数
     master=true      #主模式
     oplogSize=2048   #日志滚动，单位M
   slave.conf: |
     port=27017
+    fork=true
+    logpath=/data/mongodb/logs/mongodb.log
     logappend=true
     maxConns=1024
     slave=true                  #从模式
