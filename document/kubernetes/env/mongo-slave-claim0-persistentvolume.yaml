@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-slave-data
+  labels:
+    io.kompose.service: mongo-slave-data
+
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: default
+  nfs:
+    path: /mydata/mongo-slave/db
+    server: 10.100.6.145
+##配置PV

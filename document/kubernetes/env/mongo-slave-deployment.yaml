@@ -5,13 +5,13 @@ metadata:
     kompose.cmd: kompose convert
     kompose.version: 1.22.0 (955b78124)
   labels:
-    io.kompose.service: mongo
-  name: mongo
+    io.kompose.service: mongo-slave
+  name: mongo-slave
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: mongo
+      io.kompose.service: mongo-slave
   strategy:
     type: Recreate
   template:
@@ -20,17 +20,17 @@ spec:
         kompose.cmd: kompose convert
         kompose.version: 1.22.0 (955b78124)
       labels:
-        io.kompose.service: mongo
+        io.kompose.service: mongo-slave
     spec:
       containers:
         - image: mongo:latest
-          name: mongo
+          name: mongo-slave
           ports:
             - containerPort: 27017
           resources: {}
           volumeMounts:
             - mountPath: /data/db
-              name: mongo-claim0
+              name: mongo-slave-claim0
             # 挂载配置文件
             - mountPath: /data/configdb/mongod.conf
               name: mongo-config
@@ -39,10 +39,10 @@ spec:
       volumes:
         - name: mongo-claim0
           persistentVolumeClaim:
-            claimName: mongo-claim0
+            claimName: mongo-slave-claim0
         - name: mongo-config
           configMap:
             name: mongo-config
             items:
-              - key: master.conf
+              - key: slave.conf
                 path: mongod.conf
