@@ -32,12 +32,12 @@ spec:
             - mountPath: /data/db
               name: mongo-slave-claim0
             # 挂载配置文件
-            - mountPath: /data/configdb/mongod.conf
+            - mountPath: /etc/mongod.conf
               name: mongo-config
               subPath: mongod.conf
       restartPolicy: Always
       volumes:
-        - name: mongo-claim0
+        - name: mongo-slave-claim0
           persistentVolumeClaim:
             claimName: mongo-slave-claim0
         - name: mongo-config
