@@ -64,7 +64,7 @@ data:
 
                 location ~ \.php$ {
                            try_files $uri =404;
-                           fastcgi_pass   10.100.6.145:9001;
+                           fastcgi_pass   10.100.6.140:9001;
                            fastcgi_index  index.php;
                            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
                            include        fastcgi_params;

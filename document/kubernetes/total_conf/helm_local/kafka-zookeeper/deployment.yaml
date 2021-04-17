@@ -29,11 +29,11 @@ spec:
             - name: PROVISIONER_NAME
               value: fuseim.pri/ifs
             - name: NFS_SERVER
-              value: 10.100.6.145
+              value: 10.100.6.140
             - name: NFS_PATH
               value: /mydata/bitnami
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.100.6.145
+            server: 10.100.6.140
             path: /mydata/bitnami

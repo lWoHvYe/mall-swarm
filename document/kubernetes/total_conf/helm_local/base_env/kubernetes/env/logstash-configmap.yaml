@@ -49,7 +49,7 @@ data:
     }
     output {
       elasticsearch {
-        hosts => "10.100.6.145:9200"
+        hosts => "10.100.6.140:9200"
         index => "springboot-logstash-%{+YYYY.MM.dd}"
       }
     }

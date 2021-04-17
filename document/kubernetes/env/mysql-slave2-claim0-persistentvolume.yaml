@@ -14,5 +14,5 @@ spec:
   storageClassName: default
   nfs:
     path: /mydata/mysql-slave2/data/db
-    server: 10.100.6.145
+    server: 10.100.6.140
 ##配置PV

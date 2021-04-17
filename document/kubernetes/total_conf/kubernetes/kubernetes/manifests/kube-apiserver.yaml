@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   annotations:
-    kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 10.100.6.145:6443
+    kubeadm.kubernetes.io/kube-apiserver.advertise-address.endpoint: 10.100.6.140:6443
   creationTimestamp: null
   labels:
     component: kube-apiserver
@@ -13,7 +13,7 @@ spec:
   containers:
   - command:
     - kube-apiserver
-    - --advertise-address=10.100.6.145
+    - --advertise-address=10.100.6.140
     - --allow-privileged=true
     - --authorization-mode=Node,RBAC
     - --client-ca-file=/etc/kubernetes/pki/ca.crt
@@ -48,7 +48,7 @@ spec:
     livenessProbe:
       failureThreshold: 8
       httpGet:
-        host: 10.100.6.145
+        host: 10.100.6.140
         path: /livez
         port: 6443
         scheme: HTTPS
@@ -59,7 +59,7 @@ spec:
     readinessProbe:
       failureThreshold: 3
       httpGet:
-        host: 10.100.6.145
+        host: 10.100.6.140
         path: /readyz
         port: 6443
         scheme: HTTPS
@@ -71,7 +71,7 @@ spec:
     startupProbe:
       failureThreshold: 24
       httpGet:
-        host: 10.100.6.145
+        host: 10.100.6.140
         path: /livez
         port: 6443
         scheme: HTTPS
